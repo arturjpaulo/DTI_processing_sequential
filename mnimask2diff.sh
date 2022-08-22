@@ -20,7 +20,7 @@ for identifier in $(cat /Users/arturmarquespaulo/Documents/sample_DTI/subjectlis
         
                         echo Applywarp ${maskfile} ok, binarizing mask...
                         
-                        fslmaths ${directory}.bedpostX/${maskfile} -thr 0.5 ${directory}.bedpostX/${maskfile}_bin0.5
+                        fslmaths ${directory}.bedpostX/${maskfile} -thr 0.5 -bin ${directory}.bedpostX/${maskfile}_bin0.5
         
                         done
 done
