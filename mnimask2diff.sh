@@ -13,7 +13,7 @@ for identifier in $(cat /Users/arturmarquespaulo/Documents/sample_DTI/subjectlis
                         for sdtMaskFile in /Users/arturmarquespaulo/Documents/sample_DTI/MaskROIs/*.nii.gz
                         do
                      
-                        maskfile=$(basename ${sdtMaskFile})
+                        maskfile=$(basename ${sdtMaskFile} .nii.gz)
                         echo Running ${maskfile}...
                         
                         flirt -ref ${directory}/nodif_brain -in ${sdtMaskFile} -applyxfm -init ${directory}.bedpostX/xfms/standard2diff  -out ${directory}.bedpostX/${maskfile}
